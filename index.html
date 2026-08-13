@@ -1,0 +1,344 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+<title>Sochary Vanda — Portfolio</title>
+<meta name="description" content="Sochary Vanda — Computer Science student aiming toward Data Science and UX/UI Design. An interactive, macOS-desktop-style portfolio." />
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2222%22 fill=%22%23151022%22/><text x=%2250%22 y=%2266%22 font-size=%2252%22 font-family=%22monospace%22 fill=%22%23b79bff%22 text-anchor=%22middle%22>SV</text></svg>" />
+<link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+
+<noscript>
+  <div style="max-width:640px;margin:3rem auto;padding:2rem;font-family:sans-serif;line-height:1.6;color:#eee;background:#15111f;">
+    <h1>Sochary Vanda</h1>
+    <p>Sophomore at Paragon International University — aiming toward Data Science and UX/UI Design.</p>
+    <p>I am currently a computer science student in my sophomore year. I also try things that transcend the domain I'm studying, always looking to integrate and challenge my creativity — creating things that serve both function and aesthetic.</p>
+    <h2>Contact</h2>
+    <p>Tel: +855 86 861 152<br/>Email: vandasochary@gmail.com / svanda@paragoniu.edu.kh</p>
+    <p>This site uses interactive scripting for its desktop-style interface. Please enable JavaScript for the full experience.</p>
+  </div>
+</noscript>
+
+<div id="app" class="app-shell" hidden>
+
+  <!-- MENU BAR -->
+  <header class="menubar">
+    <div class="menubar-left">
+      <span class="menu-glyph" aria-hidden="true">&#10022;</span>
+      <span class="menu-appname" id="menuAppName">About Me</span>
+      <span class="menu-item">File</span>
+      <span class="menu-item">Edit</span>
+      <span class="menu-item">View</span>
+      <span class="menu-item">Window</span>
+      <span class="menu-item">Help</span>
+    </div>
+    <div class="menubar-right">
+      <span class="menu-status" title="Wi-Fi">&#9679;&#9679;&#9679;</span>
+      <span class="menu-status" title="Battery">&#9646;&#9646;&#9646;&#9646;</span>
+      <time class="menu-clock" id="clock">--:--</time>
+    </div>
+  </header>
+
+  <!-- DESKTOP -->
+  <main class="desktop" id="desktop">
+    <div class="wallpaper" aria-hidden="true">
+      <span class="orb orb-a"></span>
+      <span class="orb orb-b"></span>
+      <span class="orb orb-c"></span>
+    </div>
+
+    <p class="desktop-hint" id="desktopHint">Double-click an icon to open &middot; or use the Dock below</p>
+
+    <div class="desktop-icons">
+      <button class="desktop-icon" data-open="about">
+        <span class="icon-tile icon-about" aria-hidden="true">&#128100;</span>
+        <span class="icon-label">About Me</span>
+      </button>
+      <button class="desktop-icon" data-open="education">
+        <span class="icon-tile icon-education" aria-hidden="true">&#127891;</span>
+        <span class="icon-label">Education</span>
+      </button>
+      <button class="desktop-icon" data-open="skills">
+        <span class="icon-tile icon-skills" aria-hidden="true">&#129504;</span>
+        <span class="icon-label">Skills</span>
+      </button>
+      <button class="desktop-icon" data-open="experience">
+        <span class="icon-tile icon-experience" aria-hidden="true">&#128188;</span>
+        <span class="icon-label">Experience</span>
+      </button>
+      <button class="desktop-icon" data-open="achievements">
+        <span class="icon-tile icon-achievements" aria-hidden="true">&#127942;</span>
+        <span class="icon-label">Achievements</span>
+      </button>
+      <button class="desktop-icon" data-open="contact">
+        <span class="icon-tile icon-contact" aria-hidden="true">&#9993;&#65039;</span>
+        <span class="icon-label">Contact</span>
+      </button>
+      <a class="desktop-icon" href="assets/cv/Sochary-Vanda-CV.pdf" download>
+        <span class="icon-tile icon-file" aria-hidden="true">&#128196;</span>
+        <span class="icon-label">portfolio.pdf</span>
+      </a>
+    </div>
+
+    <!-- WINDOW: About -->
+    <section class="mac-window" data-window="about" data-w="620" data-h="500">
+      <header class="window-titlebar">
+        <div class="traffic-lights">
+          <button class="tl tl-close" data-action="close" aria-label="Close window"></button>
+          <button class="tl tl-min" data-action="min" aria-label="Minimize window"></button>
+          <button class="tl tl-max" data-action="max" aria-label="Maximize window"></button>
+        </div>
+        <div class="window-title">About Me</div>
+      </header>
+      <div class="window-body">
+        <div class="about-layout">
+          <img class="about-photo" src="assets/images/profile.jpg" alt="Portrait of Sochary Vanda" />
+          <div>
+            <h2 class="about-name">Sochary Vanda</h2>
+            <p class="about-role"><span class="tag-pill">Sophomore</span> at <span class="accent-text">Paragon International University</span></p>
+          </div>
+        </div>
+        <p>
+          I am currently a computer science student in my sophomore year, aiming toward
+          <strong>Data Science</strong> and <strong>UX/UI Design</strong>. Despite studying something
+          predominantly tech and coding, I also attempt to try things that transcend the domain I'm
+          studying. My quest is to always look for where I can integrate and challenge my creativity
+          within what I do.
+        </p>
+        <p>I want to create things that serve both function and aesthetic.</p>
+        <div class="goal-callout">
+          <span class="tag-pill mono">Career goal</span>
+          <p>I would love to pursue data science and UX/UI design.</p>
+        </div>
+      </div>
+      <div class="resize-handle" aria-hidden="true"></div>
+    </section>
+
+    <!-- WINDOW: Education -->
+    <section class="mac-window" data-window="education" data-w="560" data-h="480">
+      <header class="window-titlebar">
+        <div class="traffic-lights">
+          <button class="tl tl-close" data-action="close" aria-label="Close window"></button>
+          <button class="tl tl-min" data-action="min" aria-label="Minimize window"></button>
+          <button class="tl tl-max" data-action="max" aria-label="Maximize window"></button>
+        </div>
+        <div class="window-title">Education</div>
+      </header>
+      <div class="window-body">
+        <ol class="timeline">
+          <li>
+            <div class="timeline-dot"></div>
+            <div class="timeline-body">
+              <div class="timeline-top">
+                <h4>Bachelor of Computer Science</h4>
+                <span class="date-pill">2024 – 2028</span>
+              </div>
+              <p>Paragon International University</p>
+            </div>
+          </li>
+          <li>
+            <div class="timeline-dot"></div>
+            <div class="timeline-body">
+              <div class="timeline-top">
+                <h4>Front-end Program</h4>
+                <span class="date-pill">Sep – Dec 2025</span>
+              </div>
+              <p>Above &amp; Beyond School</p>
+            </div>
+          </li>
+          <li>
+            <div class="timeline-dot"></div>
+            <div class="timeline-body">
+              <div class="timeline-top">
+                <h4>Highschool Diploma</h4>
+                <span class="date-pill">2018 – 2024</span>
+              </div>
+              <p>Russey Keo Highschool</p>
+            </div>
+          </li>
+          <li>
+            <div class="timeline-dot"></div>
+            <div class="timeline-body">
+              <div class="timeline-top">
+                <h4>English Education</h4>
+                <span class="date-pill">2020 – 2023</span>
+              </div>
+              <p>Sovannaphumi School</p>
+            </div>
+          </li>
+        </ol>
+      </div>
+      <div class="resize-handle" aria-hidden="true"></div>
+    </section>
+
+    <!-- WINDOW: Skills -->
+    <section class="mac-window" data-window="skills" data-w="520" data-h="440">
+      <header class="window-titlebar">
+        <div class="traffic-lights">
+          <button class="tl tl-close" data-action="close" aria-label="Close window"></button>
+          <button class="tl tl-min" data-action="min" aria-label="Minimize window"></button>
+          <button class="tl tl-max" data-action="max" aria-label="Maximize window"></button>
+        </div>
+        <div class="window-title">Skills</div>
+      </header>
+      <div class="window-body">
+        <div class="skill-block">
+          <h3>&#128736;&#65039; Tools</h3>
+          <div class="chip-row">
+            <span class="chip chip-blue">Figma</span>
+            <span class="chip chip-red">Notion</span>
+            <span class="chip chip-gray">VS Code</span>
+            <span class="chip chip-purple">CapCut</span>
+            <span class="chip chip-orange">Canva</span>
+          </div>
+        </div>
+        <div class="skill-block">
+          <h3>&#128421;&#65039; UX Design</h3>
+          <div class="chip-row">
+            <span class="chip chip-brown">User Research</span>
+          </div>
+        </div>
+        <div class="skill-block">
+          <h3>{ } Programming</h3>
+          <div class="chip-row">
+            <span class="chip chip-orange">JavaScript</span>
+            <span class="chip chip-yellow">Java</span>
+            <span class="chip chip-purple">CSS</span>
+            <span class="chip chip-green">HTML</span>
+            <span class="chip chip-blue">Python</span>
+          </div>
+        </div>
+      </div>
+      <div class="resize-handle" aria-hidden="true"></div>
+    </section>
+
+    <!-- WINDOW: Experience -->
+    <section class="mac-window" data-window="experience" data-w="520" data-h="300">
+      <header class="window-titlebar">
+        <div class="traffic-lights">
+          <button class="tl tl-close" data-action="close" aria-label="Close window"></button>
+          <button class="tl tl-min" data-action="min" aria-label="Minimize window"></button>
+          <button class="tl tl-max" data-action="max" aria-label="Maximize window"></button>
+        </div>
+        <div class="window-title">Experience</div>
+      </header>
+      <div class="window-body">
+        <div class="exp-card">
+          <div class="exp-logo">SET</div>
+          <div class="exp-body">
+            <h3>Part-time Teacher</h3>
+            <p>S.E.T — Science Education Tutoring</p>
+          </div>
+          <span class="date-pill">April 2025 – Present</span>
+        </div>
+      </div>
+      <div class="resize-handle" aria-hidden="true"></div>
+    </section>
+
+    <!-- WINDOW: Achievements -->
+    <section class="mac-window" data-window="achievements" data-w="560" data-h="440">
+      <header class="window-titlebar">
+        <div class="traffic-lights">
+          <button class="tl tl-close" data-action="close" aria-label="Close window"></button>
+          <button class="tl tl-min" data-action="min" aria-label="Minimize window"></button>
+          <button class="tl tl-max" data-action="max" aria-label="Maximize window"></button>
+        </div>
+        <div class="window-title">Achievements</div>
+      </header>
+      <div class="window-body">
+        <div class="achv-list">
+          <div class="achv-card">
+            <span class="date-pill">June 2025</span>
+            <p>First runner up in MIS Challenge <span class="dim">(UX/UI challenge)</span></p>
+          </div>
+          <div class="achv-card">
+            <span class="date-pill">2025</span>
+            <p>Techo Digital Talent Scholarship, Phnom Penh — awarded by Cambodia Academy of Digital Technology (CADT)</p>
+          </div>
+          <div class="achv-card">
+            <span class="date-pill">2018 – 2019</span>
+            <p>First place, Slide Presentation — Phnom Penh Competition</p>
+          </div>
+          <div class="achv-card">
+            <span class="date-pill">2021 – 2022</span>
+            <p>First Runner-Up, Debate Competition — organized by the Academic Department of NTC Group</p>
+          </div>
+        </div>
+      </div>
+      <div class="resize-handle" aria-hidden="true"></div>
+    </section>
+
+    <!-- WINDOW: Contact -->
+    <section class="mac-window" data-window="contact" data-w="520" data-h="420">
+      <header class="window-titlebar">
+        <div class="traffic-lights">
+          <button class="tl tl-close" data-action="close" aria-label="Close window"></button>
+          <button class="tl tl-min" data-action="min" aria-label="Minimize window"></button>
+          <button class="tl tl-max" data-action="max" aria-label="Maximize window"></button>
+        </div>
+        <div class="window-title">Contact</div>
+      </header>
+      <div class="window-body">
+        <h3>Contact info</h3>
+        <ul class="info-list">
+          <li><span class="tag-pill mono">Tel</span> <a href="tel:+85586861152">+855 86 861 152</a></li>
+          <li><span class="tag-pill mono">Email</span> <a href="mailto:vandasochary@gmail.com">vandasochary@gmail.com</a></li>
+          <li><span class="tag-pill mono">Email</span> <a href="mailto:svanda@paragoniu.edu.kh">svanda@paragoniu.edu.kh</a></li>
+        </ul>
+        <h3 style="margin-top:1.4rem;">Links</h3>
+        <ul class="info-list">
+          <li><span class="tag-pill mono">GitHub</span> <a href="#" target="_blank" rel="noopener">Add your GitHub link</a></li>
+          <li><span class="tag-pill mono">Figma</span> <a href="#" target="_blank" rel="noopener">Add your Figma link</a></li>
+          <li><span class="tag-pill mono">CV</span> <a href="assets/cv/Sochary-Vanda-CV.pdf" download>portfolio.pdf</a></li>
+        </ul>
+      </div>
+      <div class="resize-handle" aria-hidden="true"></div>
+    </section>
+  </main>
+
+  <!-- DOCK -->
+  <nav class="dock" aria-label="Dock">
+    <button class="dock-item" data-open="about">
+      <span class="dock-icon icon-about">&#128100;</span>
+      <span class="dock-dot"></span>
+      <span class="dock-tooltip">About Me</span>
+    </button>
+    <button class="dock-item" data-open="education">
+      <span class="dock-icon icon-education">&#127891;</span>
+      <span class="dock-dot"></span>
+      <span class="dock-tooltip">Education</span>
+    </button>
+    <button class="dock-item" data-open="skills">
+      <span class="dock-icon icon-skills">&#129504;</span>
+      <span class="dock-dot"></span>
+      <span class="dock-tooltip">Skills</span>
+    </button>
+    <button class="dock-item" data-open="experience">
+      <span class="dock-icon icon-experience">&#128188;</span>
+      <span class="dock-dot"></span>
+      <span class="dock-tooltip">Experience</span>
+    </button>
+    <button class="dock-item" data-open="achievements">
+      <span class="dock-icon icon-achievements">&#127942;</span>
+      <span class="dock-dot"></span>
+      <span class="dock-tooltip">Achievements</span>
+    </button>
+    <button class="dock-item" data-open="contact">
+      <span class="dock-icon icon-contact">&#9993;&#65039;</span>
+      <span class="dock-dot"></span>
+      <span class="dock-tooltip">Contact</span>
+    </button>
+    <span class="dock-divider" aria-hidden="true"></span>
+    <a class="dock-item" href="assets/cv/Sochary-Vanda-CV.pdf" download>
+      <span class="dock-icon icon-file">&#128196;</span>
+      <span class="dock-tooltip">portfolio.pdf</span>
+    </a>
+  </nav>
+
+</div>
+
+<script src="assets/js/main.js"></script>
+</body>
+</html>
