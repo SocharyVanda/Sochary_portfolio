@@ -17,6 +17,8 @@
     <p>I am currently a computer science student in my sophomore year. I also try things that transcend the domain I'm studying, always looking to integrate and challenge my creativity — creating things that serve both function and aesthetic.</p>
     <h2>Contact</h2>
     <p>Tel: +855 86 861 152<br/>Email: vandasochary@gmail.com / svanda@paragoniu.edu.kh</p>
+    <h2>Selected projects</h2>
+    <p>BookLan, BrewFinder, GlowSkin (Skincare Website), Tesla Clone, WedPod.</p>
     <p>This site uses interactive scripting for its desktop-style interface. Please enable JavaScript for the full experience.</p>
   </div>
 </noscript>
@@ -75,6 +77,25 @@
       <button class="desktop-icon" data-open="contact">
         <span class="icon-tile icon-contact" aria-hidden="true">&#9993;&#65039;</span>
         <span class="icon-label">Contact</span>
+      </button>
+      <button class="desktop-icon" data-open="projects">
+        <span class="icon-tile icon-folder" aria-hidden="true">
+          <svg viewBox="0 0 128 100" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <linearGradient id="folderTabG" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="#dbe6f7"/>
+                <stop offset="100%" stop-color="#b9cbe8"/>
+              </linearGradient>
+              <linearGradient id="folderBodyG" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="#f2f6fc"/>
+                <stop offset="100%" stop-color="#cddbf0"/>
+              </linearGradient>
+            </defs>
+            <path d="M4 22c0-4.4 3.6-8 8-8h28l10 10h66c4.4 0 8 3.6 8 8v50c0 4.4-3.6 8-8 8H12c-4.4 0-8-3.6-8-8V22z" fill="url(#folderTabG)"/>
+            <path d="M4 34c0-4.4 3.6-8 8-8h104c4.4 0 8 3.6 8 8v46c0 4.4-3.6 8-8 8H12c-4.4 0-8-3.6-8-8V34z" fill="url(#folderBodyG)"/>
+          </svg>
+        </span>
+        <span class="icon-label">Projects</span>
       </button>
       <a class="desktop-icon" href="assets/cv/Sochary-Vanda-CV.pdf" download>
         <span class="icon-tile icon-file" aria-hidden="true">&#128196;</span>
@@ -296,6 +317,37 @@
       </div>
       <div class="resize-handle" aria-hidden="true"></div>
     </section>
+
+    <!-- WINDOW: Projects (folder view) -->
+    <section class="mac-window" data-window="projects" data-w="600" data-h="460">
+      <header class="window-titlebar">
+        <div class="traffic-lights">
+          <button class="tl tl-close" data-action="close" aria-label="Close window"></button>
+          <button class="tl tl-min" data-action="min" aria-label="Minimize window"></button>
+          <button class="tl tl-max" data-action="max" aria-label="Maximize window"></button>
+        </div>
+        <div class="window-title">Projects</div>
+      </header>
+      <div class="window-body">
+        <p class="folder-hint">Double-click a project to open it</p>
+        <div class="project-grid" id="projectGrid"></div>
+      </div>
+      <div class="resize-handle" aria-hidden="true"></div>
+    </section>
+
+    <!-- WINDOW: Project detail (reused for each project) -->
+    <section class="mac-window" data-window="project-detail" data-w="560" data-h="560">
+      <header class="window-titlebar">
+        <div class="traffic-lights">
+          <button class="tl tl-close" data-action="close" aria-label="Close window"></button>
+          <button class="tl tl-min" data-action="min" aria-label="Minimize window"></button>
+          <button class="tl tl-max" data-action="max" aria-label="Maximize window"></button>
+        </div>
+        <div class="window-title" id="projectDetailTitle">Project</div>
+      </header>
+      <div class="window-body project-detail-body" id="projectDetailBody"></div>
+      <div class="resize-handle" aria-hidden="true"></div>
+    </section>
   </main>
 
   <!-- DOCK -->
@@ -329,6 +381,16 @@
       <span class="dock-icon icon-contact">&#9993;&#65039;</span>
       <span class="dock-dot"></span>
       <span class="dock-tooltip">Contact</span>
+    </button>
+    <button class="dock-item" data-open="projects">
+      <span class="dock-icon icon-folder">
+        <svg viewBox="0 0 128 100" xmlns="http://www.w3.org/2000/svg">
+          <path d="M4 22c0-4.4 3.6-8 8-8h28l10 10h66c4.4 0 8 3.6 8 8v50c0 4.4-3.6 8-8 8H12c-4.4 0-8-3.6-8-8V22z" fill="#b9cbe8"/>
+          <path d="M4 34c0-4.4 3.6-8 8-8h104c4.4 0 8 3.6 8 8v46c0 4.4-3.6 8-8 8H12c-4.4 0-8-3.6-8-8V34z" fill="#dde8f8"/>
+        </svg>
+      </span>
+      <span class="dock-dot"></span>
+      <span class="dock-tooltip">Projects</span>
     </button>
     <span class="dock-divider" aria-hidden="true"></span>
     <a class="dock-item" href="assets/cv/Sochary-Vanda-CV.pdf" download>

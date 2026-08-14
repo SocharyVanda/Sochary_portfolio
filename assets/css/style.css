@@ -176,6 +176,13 @@ button { font: inherit; color: inherit; background: none; border: none; cursor: 
   box-shadow: 0 6px 16px rgba(0,0,0,0.25);
 }
 .icon-file { background: linear-gradient(150deg, #e5e7eb, #cbd5e1); }
+.icon-tile.icon-folder {
+  background: none;
+  border: none;
+  box-shadow: none;
+  filter: drop-shadow(0 6px 10px rgba(0,0,0,0.3));
+}
+.icon-tile.icon-folder svg { width: 100%; height: 100%; }
 
 .icon-label {
   font-size: 0.72rem;
@@ -351,6 +358,63 @@ button { font: inherit; color: inherit; background: none; border: none; cursor: 
 .info-list a { color: var(--text-dim); font-size: 0.88rem; transition: color 0.2s ease; word-break: break-word; }
 .info-list a:hover { color: var(--accent); }
 
+/* Projects folder */
+.folder-hint {
+  font-size: 0.78rem;
+  color: var(--text-dim);
+  margin-bottom: 1.2rem;
+}
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+  gap: 1.2rem 0.6rem;
+}
+.project-icon {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.6rem 0.4rem;
+  border-radius: 12px;
+  text-align: center;
+}
+.project-icon:hover,
+.project-icon:focus-visible { background: rgba(255,255,255,0.07); }
+.project-icon.selected { background: rgba(183,155,255,0.22); }
+.project-icon img {
+  width: 84px; height: 84px;
+  object-fit: cover;
+  border-radius: 14px;
+  border: 1px solid var(--border);
+  box-shadow: 0 8px 18px rgba(0,0,0,0.3);
+}
+.project-icon span { font-size: 0.78rem; color: var(--text); line-height: 1.25; }
+
+/* Project detail */
+.project-detail-body { padding: 0 !important; display: flex; flex-direction: column; }
+.project-hero {
+  width: 100%; height: 210px;
+  object-fit: cover;
+  flex: 0 0 auto;
+}
+.project-detail-content { padding: 1.4rem 1.6rem 1.8rem; }
+.project-detail-content h2 { font-size: 1.2rem; margin-bottom: 0.6rem; }
+.project-tag-row { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 1rem; }
+.project-detail-content p.desc { color: var(--text-dim); font-size: 0.9rem; margin-bottom: 1.2rem; }
+.project-detail-content h4 { font-size: 0.8rem; color: var(--text-dim); text-transform: uppercase; letter-spacing: 0.04em; margin-bottom: 0.5rem; }
+.project-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin-top: 0.4rem;
+  padding: 0.6rem 1.1rem;
+  border-radius: 999px;
+  background: linear-gradient(120deg, var(--accent), var(--accent-2));
+  color: #180f2e;
+  font-weight: 600;
+  font-size: 0.85rem;
+}
+
 /* ---------- Dock ---------- */
 .dock {
   position: fixed;
@@ -382,7 +446,9 @@ button { font: inherit; color: inherit; background: none; border: none; cursor: 
   flex-shrink: 0;
 }
 .dock-item:hover, .dock-item:focus-visible { transform: translateY(-10px) scale(1.08); }
-.icon-file.dock-icon { background: none; border: none; }
+.icon-file.dock-icon,
+.icon-folder.dock-icon { background: none; border: none; padding: 4px; }
+.icon-folder.dock-icon svg { width: 100%; height: 100%; filter: drop-shadow(0 4px 6px rgba(0,0,0,0.35)); }
 
 .dock-dot {
   position: absolute;
