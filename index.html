@@ -7,6 +7,9 @@
 <meta name="description" content="Sochary Vanda — Computer Science student aiming toward Data Science and UX/UI Design. An interactive, macOS-desktop-style portfolio." />
 <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2222%22 fill=%22%23151022%22/><text x=%2250%22 y=%2266%22 font-size=%2252%22 font-family=%22monospace%22 fill=%22%23b79bff%22 text-anchor=%22middle%22>SV</text></svg>" />
 <link rel="stylesheet" href="assets/css/style.css" />
+<script type="importmap">
+{ "imports": { "three": "./assets/vendor/three.module.min.js" } }
+</script>
 </head>
 <body>
 
@@ -46,62 +49,10 @@
   <!-- DESKTOP -->
   <main class="desktop" id="desktop">
     <div class="wallpaper" aria-hidden="true">
-      <span class="orb orb-a"></span>
-      <span class="orb orb-b"></span>
-      <span class="orb orb-c"></span>
+      <div id="linesBg" style="position:absolute; inset:0; z-index:0;"></div>
     </div>
 
-    <p class="desktop-hint" id="desktopHint">Double-click an icon to open &middot; or use the Dock below</p>
-
-    <div class="desktop-icons">
-      <button class="desktop-icon" data-open="about">
-        <span class="icon-tile icon-about" aria-hidden="true">&#128100;</span>
-        <span class="icon-label">About Me</span>
-      </button>
-      <button class="desktop-icon" data-open="education">
-        <span class="icon-tile icon-education" aria-hidden="true">&#127891;</span>
-        <span class="icon-label">Education</span>
-      </button>
-      <button class="desktop-icon" data-open="skills">
-        <span class="icon-tile icon-skills" aria-hidden="true">&#129504;</span>
-        <span class="icon-label">Skills</span>
-      </button>
-      <button class="desktop-icon" data-open="experience">
-        <span class="icon-tile icon-experience" aria-hidden="true">&#128188;</span>
-        <span class="icon-label">Experience</span>
-      </button>
-      <button class="desktop-icon" data-open="achievements">
-        <span class="icon-tile icon-achievements" aria-hidden="true">&#127942;</span>
-        <span class="icon-label">Achievements</span>
-      </button>
-      <button class="desktop-icon" data-open="contact">
-        <span class="icon-tile icon-contact" aria-hidden="true">&#9993;&#65039;</span>
-        <span class="icon-label">Contact</span>
-      </button>
-      <button class="desktop-icon" data-open="projects">
-        <span class="icon-tile icon-folder" aria-hidden="true">
-          <svg viewBox="0 0 128 100" xmlns="http://www.w3.org/2000/svg">
-            <defs>
-              <linearGradient id="folderTabG" x1="0" y1="0" x2="0" y2="1">
-                <stop offset="0%" stop-color="#dbe6f7"/>
-                <stop offset="100%" stop-color="#b9cbe8"/>
-              </linearGradient>
-              <linearGradient id="folderBodyG" x1="0" y1="0" x2="0" y2="1">
-                <stop offset="0%" stop-color="#f2f6fc"/>
-                <stop offset="100%" stop-color="#cddbf0"/>
-              </linearGradient>
-            </defs>
-            <path d="M4 22c0-4.4 3.6-8 8-8h28l10 10h66c4.4 0 8 3.6 8 8v50c0 4.4-3.6 8-8 8H12c-4.4 0-8-3.6-8-8V22z" fill="url(#folderTabG)"/>
-            <path d="M4 34c0-4.4 3.6-8 8-8h104c4.4 0 8 3.6 8 8v46c0 4.4-3.6 8-8 8H12c-4.4 0-8-3.6-8-8V34z" fill="url(#folderBodyG)"/>
-          </svg>
-        </span>
-        <span class="icon-label">Projects</span>
-      </button>
-      <a class="desktop-icon" href="assets/cv/Sochary-Vanda-CV.pdf" download>
-        <span class="icon-tile icon-file" aria-hidden="true">&#128196;</span>
-        <span class="icon-label">portfolio.pdf</span>
-      </a>
-    </div>
+    <p class="desktop-hint" id="desktopHint">Use the Dock below to open an app</p>
 
     <!-- WINDOW: About -->
     <section class="mac-window" data-window="about" data-w="620" data-h="500">
@@ -402,5 +353,6 @@
 </div>
 
 <script src="assets/js/main.js"></script>
+<script type="module" src="assets/js/floating-lines-init.js"></script>
 </body>
 </html>

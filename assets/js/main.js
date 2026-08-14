@@ -271,36 +271,6 @@
 
   renderProjectGrid();
 
-  // ---- Wire up desktop icons (double-click / double-tap to open) ----
-  document.querySelectorAll(".desktop-icon[data-open]").forEach(function (icon) {
-    var lastTap = 0;
-    icon.addEventListener("click", function (e) {
-      document.querySelectorAll(".desktop-icon.selected").forEach(function (el) {
-        if (el !== icon) el.classList.remove("selected");
-      });
-      var now = Date.now();
-      if (now - lastTap < 400) {
-        icon.classList.remove("selected");
-        openWindow(icon.getAttribute("data-open"));
-        lastTap = 0;
-      } else {
-        icon.classList.add("selected");
-        lastTap = now;
-      }
-    });
-    icon.addEventListener("dblclick", function () {
-      openWindow(icon.getAttribute("data-open"));
-    });
-  });
-
-  desktop.addEventListener("click", function (e) {
-    if (!e.target.closest(".desktop-icon")) {
-      document.querySelectorAll(".desktop-icon.selected").forEach(function (el) {
-        el.classList.remove("selected");
-      });
-    }
-  });
-
   // ---- Wire up dock ----
   document.querySelectorAll(".dock-item[data-open]").forEach(function (item) {
     item.addEventListener("click", function () {
